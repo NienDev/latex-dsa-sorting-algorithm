@@ -160,6 +160,15 @@ keepaspectratio]{Logo_hcmus.png}}%
 	accomplish our goals. So our group members are extremely thankful to our teacher: Dr. Van Chi Nam, Mr. Bui Huy Thong, Ms. Tran Thi Thao Nhi, Mr. Le Thanh Tung for putting so much 
 	effort to help us to achieve our goals.
 	\\[12pt]All the code is coded in C\texttt{++}. the report is written in \LaTeX  \hspace{1pt} and all references we used are mentioned in the reference section at the end of the report.
+	\\[12pt]The experiment is conducted on Laptop with these Properties:
+	\begin{itemize}
+	    \item Operating system: Window 11 Home Single Language 64-bit  (10.0, Build 22000)
+	    \item System manufacturer: Acer
+	    \item System model: Nitro AN515-57
+	    \item BIOS: V1.10
+	    \item Processor: 11th Gen Intel(R) Core(TM) i5-11400H @ 2.70GHz(12 CPUs), ~2.7GHz
+	    \item Memory: 8192MB Ram    
+	\end{itemize}
 	\pagebreak
 	\section{Algorithm Presentation}
 		\rule{15cm}{0.1cm}
@@ -261,7 +270,10 @@ keepaspectratio]{Logo_hcmus.png}}%
 				It works similar to the way you sort playing cards in your hands. The array is virtually split into a sorted and an unsorted part. Values from the unsorted part are picked and placed at the correct position in the sorted part.
 				\\[12pt]
 				\item \textbf{Complexity Analysis of Insertion Sort}
-				\\[12pt]
+				\begin{itemize}
+				\item The worst-case (and average-case) complexity of the insertion sort algorithm is O($n^2$). Meaning that, in the worst case, the time taken to sort a list is proportional to the square of the number of elements in the list.
+                \item The best-case time complexity of insertion sort algorithm is O(n) time complexity.
+                \end{itemize}
 				\item \textbf{Pseudo code:}
 				
 				\begin{algorithm}
@@ -333,7 +345,13 @@ keepaspectratio]{Logo_hcmus.png}}%
 				Bubble Sort works by repeatedly swapping the adjacent elements if they are in the wrong order.
 				\\[12pt]
 				\item \textbf{Complexity Analysis of Bubble Sort}
-				\\[12pt]
+				\begin{itemize}
+							\item Bubble Sort is an in-place algorithm as it does not use any additional memory. Its algorithm is also stable.
+							\item Bubble Sort has a huge number of swaps.
+							\item The worst case condition for bubble sort occurs when elements of the array are arranged in decreasing order.
+							\item Worst and average case time complexity is the same: $\mathcal{O}(n^2)$
+							\item The best case occurs when an array is already sorted with time complexity: $\mathcal{O}(n)$
+				\end{itemize}
 				\item \textbf{Pseudo code:} 
 			    \begin{algorithm}
             	\begin{algorithmic}[1]
@@ -356,11 +374,12 @@ keepaspectratio]{Logo_hcmus.png}}%
 					
 				\item \textbf{Description:}
 						\begin{itemize}
-							\item Bubble Sort is an in-place algorithm as it does not use any additional memory. Its algorithm is also stable.
-							\item Bubble Sort has a huge number of swaps.
-							\item The worst case condition for bubble sort occurs when elements of the array are arranged in decreasing order.
-							\item Worst and average case time complexity is the same: $\mathcal{O}(n^2)$
-							\item The best case occurs when an array is already sorted with time complexity: $\mathcal{O}(n)$
+							\item Step 1: assign $i = 0$
+                            \item Step 2: assign $j = 0$, swapped = false
+                            \item Step 3: if $a[j] > a[j+1]$, swap a[j] and a[j+1], swapped = true
+                            \item Step 4: $j = j + 1$, if $j < n – i – 1$ go to step 3
+                            \item Step 5: if swapped = false, end algorithm
+                            \item Step 6: $i = i + 1$, if $i < n – 1$ go to step 2
 						\end{itemize}
 				\item \textbf{Variants/ improvements:}
 					\begin{itemize}
@@ -395,9 +414,12 @@ keepaspectratio]{Logo_hcmus.png}}%
 				Shaker Sort or Cocktail Sort is a variation of Bubble sort. The Bubble sort algorithm always traverses elements from left and moves the largest element to its correct position in first iteration and second largest in second iteration and so on. Cocktail Sort traverses through a given array in both directions alternatively. 
 				\\[12pt]
 				\item \textbf{Complexity Analysis of Shaker Sort}
-				\\[12pt]
+				\begin{itemize}
+				    \item Worst and Average Case Time Complexity: O($n^2$). 
+                    \item Best Case Time Complexity: O(n). Best case occurs when array is already sorted.
+				\end{itemize}   
 				\item \textbf{Pseudo code:} 
-				\begin{algorithm}
+				\begin{algorithm}[H]
             	\begin{algorithmic}[1]
             		\Procedure{Shaker Sort}{$a, n$}
             			\Do
@@ -438,7 +460,11 @@ keepaspectratio]{Logo_hcmus.png}}%
 						\item The second stage loops through the array in opposite direction- starting from the item just before the most recently sorted item, and moving back to the start of the array. Here also, adjacent items are compared and are swapped if required.
 					\end{itemize}
 				\item \textbf{Variants/ improvements:}
-					MISSING
+					\begin{itemize}
+					\item Cocktail shaker sort, also known as bidirectional bubble sort, cocktail sort, shaker sort (which can also refer to a variant of selection sort), ripple sort, shuffle sort, or shuttle sort, is an extension of bubble sort. The algorithm extends bubble sort by operating in two directions. While it improves on bubble sort by more quickly moving items to the beginning of the list, it provides only marginal performance improvements.
+                    
+                    \item Like most variants of bubble sort, cocktail shaker sort is used primarily as an educational tool. More performant algorithms such as timsort, or merge sort are used by the sorting libraries built into popular programming languages such as Python and Java.
+                    \end{itemize}
 				\item \textbf{Advantage, disadvantage:}
 					\begin{table}[H]
 						\centering
@@ -469,9 +495,17 @@ keepaspectratio]{Logo_hcmus.png}}%
 				Method of Shell Sport starts by sorting pairs of elements far apart from each other, then progressively reducing the gap between elements to be compared.
 				\\[12pt]
 				\item \textbf{Complexity Analysis of Shell Sort}
-				\\[12pt]
+				\begin{itemize}
+				\item Shell Sort is an optimization of insertion sort that allows the exchange of items that are far apart.
+                \item By starting with far apart elements, it can move some out-of-place elements into position faster than a simple nearest neighbor exchange
+                \item Shell Sort is an in-place sorting algorithm, but it’s not stable
+                \item The worst case time complexity for shell sort is O($n^2$)
+                \item When the given array list is already sorted the total count of comparisons of each interval is equal to the size of the given array. So best case time complexity is O(nlog(n))
+                \item The shell sort average case time complexity depends on the interval selected by the programmer.
+                \item The space complexity of the shell sort is O(1)
+                \end{itemize}
 				\item \textbf{Pseudo code:} 
-				\begin{algorithm}
+				\begin{algorithm}[H]
             	\begin{algorithmic}[1]
             		\Procedure{Shell Sort}{$a, n$}
             			\State \textcolor{Gray}{/* calculate interval*/}
@@ -507,16 +541,13 @@ keepaspectratio]{Logo_hcmus.png}}%
 					
 				\item \textbf{Description:}
 					\begin{itemize}
-						\item Shell Sort is an optimization of insertion sort that allows the exchange of items that are far apart.
-						\item By starting with far apart elements, it can move some out-of-place elements into position faster than a simple nearest neighbor exchange
-						\item Shell Sort is an in-place sorting algorithm, but it’s not stable
-						\item The worst case time complexity for shell sort is $\mathcal{O}(n^2)$
-						\item When the given array list is already sorted the total count of comparisons of each interval is equal to the size of the given array. So best case time complexity is $\mathcal{O}$(nlog(n))
-						\item The shell sort average case time complexity depends on the interval selected by the programmer.
-						\item The space complexity of the shell sort is $\mathcal{O}$(1)
+						\item Step 1: Initialize the value of gap size. Example: h
+                        \item Step 2: Divide the list into smaller sub-part. Each must have equal intervals to h
+                        \item Step 3: Sort these sub-lists using insertion sort
+                        \item Step 4: Repeat step 2 until the list is sorted
 					\end{itemize}
 				\item \textbf{Variants/ improvements:}
-					MISSING
+					Shell sort is mainly a variation of Insertion Sort. In insertion sort, we move elements only one position ahead. When an element has to be moved far ahead, many movements are involved. The idea of ShellSort is to allow the exchange of far items. In Shell sort, we make the array h-sorted for a large value of h. We keep reducing the value of h until it becomes 1. An array is said to be h-sorted if all sublists of every h’th element are sorted.
 				\item \textbf{Advantage, disadvantage:}
 					\begin{table}[H]
 						\centering
@@ -562,7 +593,7 @@ keepaspectratio]{Logo_hcmus.png}}%
 					Heapsort is an in-place sorting method, i.e., no additional memory space is required except for loop and auxiliary variables. The number of these variables is always the same. Therefore the space complexity of heapsort is O(1).
 				\\[12pt]
 				\item \textbf{Pseudo code:} 
-				\begin{algorithm}
+				\begin{algorithm}[H]
             	\begin{algorithmic}[1]
             		\Procedure{Heapify}{a, n, i}
             			\State $max \gets i$
@@ -652,7 +683,8 @@ keepaspectratio]{Logo_hcmus.png}}%
 					Merge Sort is a Divide and Conquer algorithm. It divides the input array into two halves, calls itself for the two halves, and then it merges the two sorted halves. The merge() function is used for merging two halves. The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one
 				\\[12pt]
 				\item \textbf{Complexity Analysis of Merge Sort}
-					MISSING
+    				
+    				Time complexity of Merge Sort is O(n*Log n) in all the 3 cases (worst, average and best) as merge sort always divides the array in two halves and takes linear time to merge two halves.
 				\\[12pt]
 				\item \textbf{Pseudo code:} 
 				\begin{algorithm}
@@ -744,10 +776,17 @@ keepaspectratio]{Logo_hcmus.png}}%
 					Quick Sort picks an element as pivot and partitions the given array around the picked pivot. Then, it sorts the parts independently. Finally, it combines the sorted subsequences by a simple concatenation.
 				\\[12pt]
 				\item \textbf{Complexity Analysis of Quick Sort}
-					MISSING
-				\\[12pt]
+					\begin{itemize}
+					\item Quick Sort is based on the divide-and-conquer paradigm
+                    \item Quick Sort is an in-place sorting algorithm, it just requires small additional amounts of memory to perform the sorting. However, Quick Sort is not stable
+                    \item It’s efficiency based on which elements we chose as pivot
+                    \item Worst case occurs if the pivot happens to be the smallest or largest element in the list, or in some implementations all the elements are equal. If this happens repeatedly in every partition, then each recursive call processes a list of size one less than the previous list. In this case Quick Sort takes O($n^2$) time
+                    \item Best case occurs if each time we perform a partition we divide the list into two nearly equal pieces. This means each recursive call processes a list of half the size. Quick Sort takes only O(nlog(n)) time in this case
+                    \item Average case, Quick Sort takes O(nlog(n)) time
+                    \item The space used by quicksort depends on the version used. The in-place version of quicksort has a space complexity of O(log(n)), even in the worst case, when it is carefully implemented
+                    \end{itemize}
 				\item \textbf{Pseudo code:} 
-				\begin{algorithm}
+				\begin{algorithm}[H]
             	\begin{algorithmic}[1]
             		\Procedure{Quick Sort}{a, begin, end}
             			\State pivotIndex = partition(a, begin, end)
@@ -777,13 +816,10 @@ keepaspectratio]{Logo_hcmus.png}}%
 					
 				\item \textbf{Description:}
 				\begin{itemize}
-					\item Quick Sort is based on the divide-and-conquer paradigm
-					\item Quick Sort is an in-place sorting algorithm, it just requires small additional amounts of memory to perform the sorting. However, Quick Sort is not stable
-					\item It’s efficiency based on which elements we chose as pivot
-					\item Worst case occurs if the pivot happens to be the smallest or largest element in the list, or in some implementations all the elements are equal. If this happens repeatedly in every partition, then each recursive call processes a list of size one less than the previous list. In this case Quick Sort takes O(n2) time
-					\item Best case occurs if each time we perform a partition we divide the list into two nearly equal pieces. This means each recursive call processes a list of half the size. Quick Sort takes only O(nlog(n)) time in this case
-					\item Average case, Quick Sort takes O(nlog(n)) time
-					\item The space used by quicksort depends on the version used. The in-place version of quicksort has a space complexity of O(log(n)), even in the worst case, when it is carefully implemented
+					\item Step 1: Choose pivot
+                    \item Step 2: Divide the list into two parts
+                    \item Step 3: Partition the elements so that all those with values less than the pivot come in one sub-list and all those with greater values come in another
+                    \item Step 4: Run from step 1 with two sub-lists separately	
 				\end{itemize}
 				\item \textbf{Variants/ improvements:}
 					\begin{itemize}
@@ -1016,9 +1052,13 @@ keepaspectratio]{Logo_hcmus.png}}%
 					Flash Sort assigns each of the n input elements to one of m buckets, efficiently rearranges the input to place the buckets in the correct order, then sorts each bucket.
 				\\[12pt]
 				\item \textbf{Complexity Analysis of Flash Sort}
-				
-				\item \textbf{Pseudo code:} 
-				\pagebreak
+				\begin{itemize}
+				\item Flash Sort is a distribution sorting algorithm showing linear computational complexity O(n) for uniformly distributed data sets and relatively little additional memory requirement
+                \item Flash Sort is not an in-place algorithm as it has to have a list of buckets. It’s also not stable
+                \item As with all bucket sorts, performance depends critically on the balance of the buckets. In the ideal case of a balanced data set, each bucket will be approximately the same size. If the number m of buckets is linear in the input size n, each bucket has a constant size, so sorting a single bucket with an O($n^2$) algorithm like insertion sort has complexity O(1). The running time of the final insertion sorts is therefore O(n)
+                \item In the worst-case scenarios where almost all the elements are in a few buckets, the complexity of the algorithm is limited by the performance of the final bucket-sorting method, so degrades to O($n^2$)
+                \item If stability is required, it is possible to use a second array so elements can be classified sequentially. However, in this case, the algorithm will require O(n) additional memory
+                \end{itemize}
 				\item \textbf{Flowchart:}
 					\begin{figure}[H]
 						\centering 
@@ -1027,11 +1067,13 @@ keepaspectratio]{Logo_hcmus.png}}%
 					
 				\item \textbf{Description:}
 					\begin{itemize}
-						\item Flash Sort is a distribution sorting algorithm showing linear computational complexity O(n) for uniformly distributed data sets and relatively little additional memory requirement
-						\item Flash Sort is not an in-place algorithm as it has to have a list of buckets. It’s also not stable
-						\item As with all bucket sorts, performance depends critically on the balance of the buckets. In the ideal case of a balanced data set, each bucket will be approximately the same size. If the number m of buckets is linear in the input size n, each bucket has a constant size, so sorting a single bucket with an O(n2) algorithm like insertion sort has complexity O(1). The running time of the final insertion sorts is therefore O(n)
-						\item In the worst-case scenarios where almost all the elements are in a few buckets, the complexity of the algorithm is limited by the performance of the final bucket-sorting method, so degrades to O(n2)
-						\item If stability is required, it is possible to use a second array so elements can be classified sequentially. However, in this case, the algorithm will require O(n) additional memory
+						\item Step 1: Using a first pass over the input or a priori knowledge, find the minimum and maximum sort keys
+                        \item Step 2: Linearly divide the range [amin, amax] into m buckets.
+                        \item Step 3: Make one pass over the input, counting the number of elements ai which fall into each bucket
+                        \item Step 4: Convert the counts of elements in each bucket to a prefix sum
+                        \item Step 5: Rearrange the input to all elements of each bucket
+                        \item Step 6: Sort each bucket using insertion sort
+
 					\end{itemize}
 				
 				\item \textbf{Advantage, disadvantage:}
@@ -1065,27 +1107,27 @@ keepaspectratio]{Logo_hcmus.png}}%
 		 \hline
 		 Resulting Statics & Running Time & Comparison & Running Time & Comparison & Running Time & Comparison\\
 		 \hline
-		 Selection Sort & 46.92 & 2 & 471.53 & 4 & 1306.26 & 6\\
+		 Selection Sort & 46.92 & 100009999 & 471.53 & 900029999 & 1306.26 & 2500049999\\
 		 \hline
-		 Insertion Sort & 31.27 & 2 & 315.54 & 4 & 863.56 & 6\\
+		 Insertion Sort & 31.27 & 50006605 & 315.54 & 451666774 & 863.56 & 1243254048\\
 		 \hline
-		 Bubble Sort 	& 125.08 & 2 & 1657.53 & 4 & 4815.73 & 6\\
+		 Bubble Sort 	& 125.08 & 100013601 & 1657.53 & 900032112 & 4815.73 & 2499890237\\
 		 \hline
-		 Shaker Sort 	& 128.65 & 2 & 1304.97 & 4 & 3671.22 & 6\\
+		 Shaker Sort 	& 128.65 & 75159744 & 1304.97 & 674219324 & 3671.22 & 1877697084\\
 		 \hline
-		 Shell Sort		& 0 & 2 & 6.25 & 4 & 15.80 & 6\\
+		 Shell Sort		& 0 & 669002 & 6.25 & 2309068 & 15.80 & 4321196\\
 		 \hline
-		 Heap Sort		& 0 & 2 & 6.16 & 4 & 12.59 & 6\\
+		 Heap Sort		& 0 & 638091 & 6.16 & 2150165 & 12.59 & 3772496\\
 		 \hline
-		 Merge Sort		& 0 & 2 & 15.542 & 4 & 23.745 & 6\\
+		 Merge Sort		& 0 & 583584 & 0 & 1937397 & 15.635 & 3383386\\
 		 \hline
-		 Quick Sort		& 0 & 2 & 0 & 4 & 0 & 6\\
+		 Quick Sort		& 0 & 318194 & 0 & 1037720 & 0 & 1937121\\
 		 \hline
-		 Counting Sort 	& 0 & 2 & 0 & 4 & 0 & 6\\
+		 Counting Sort 	& 0 & 90000 & 0 & 270000 & 0 & 415538\\
 		 \hline
-		 Radix Sort 	& 0 & 2 & 0 & 4 & 0 & 6\\
+		 Radix Sort 	& 0 & 140056 & 0 & 510070 & 0 & 850070\\
 		 \hline
-		 Flash Sort 	& 0 & 2 & 0 & 4 & 0 & 6\\
+		 Flash Sort 	& 0 & 97678 & 0 & 300135 & 0 & 479812\\
 		 \hline
 		\end{tabular}}
 		\caption{Sorting algorithms performance on random data with different range}
@@ -1102,27 +1144,27 @@ keepaspectratio]{Logo_hcmus.png}}%
 		 \hline
 		 Resulting Statics & Running Time & Comparison & Running Time & Comparison & Running Time & Comparison\\
 		 \hline
-		 Selection Sort & 5192.86 & 2 & 46669.30 & 4 & 129784 & 6\\
+		 Selection Sort & 5192.86 & 10000099999 & 46669.30 & 90000299999 & 129784 & 250000499999\\
 		 \hline
-		 Insertion Sort & 3452.75 & 2 & 31116.50 & 4 & 86930.3 & 6\\
+		 Insertion Sort & 3452.75 & 5002318239 & 31116.50 & 45057523254 & 86930.3 & 124942170786\\
 		 \hline
-		 Bubble Sort 	& 19917.10 & 2 & 187245 & 4 & 530384 & 6\\
+		 Bubble Sort 	& 19917.10 & 9999851901 & 187245 & 90000000925 & 530384 & 249998594400\\
 		 \hline
-		 Shaker Sort 	& 14860.63 & 2 & 135069 & 4 & 369850 & 6\\
+		 Shaker Sort 	& 14860.63 & 7504597884 & 135069 & 67769190000 & 369850 & 187638922716\\
 		 \hline
-		 Shell Sort		& 21.88 & 2 & 65.56 & 4 & 111.20 & 6\\
+		 Shell Sort		& 21.88 & 9593239 & 65.56 & 35470454 & 111.20 & 62277259\\
 		 \hline
-		 Heap Sort		& 18.816 & 2 & 65.42 & 4 & 120.78 & 6\\
+		 Heap Sort		& 18.816 & 8043541 & 65.42 & 26490788 & 120.78 & 45965900\\
 		 \hline
-		 Merge Sort		& 326.41 & 2 & 2227.45 & 4 & 4055.12 & 6\\
+		 Merge Sort		& 31.25 & 7166083 & 62.568 & 23381911 & 109.371 & 40382117\\
 		 \hline
-		 Quick Sort		& 9.39 & 2 & 25.05 & 4 & 51.39 & 6\\
+		 Quick Sort		& 9.39 & 4113382 & 25.05 & 14782439 & 51.39 & 27599949\\
 		 \hline
-		 Counting Sort 	& 0 & 2 & 0 & 4 & 3.11 & 6\\
+		 Counting Sort 	& 0 & 765538 & 0 & 2165538 & 3.11 & 3565538\\
 		 \hline
-		 Radix Sort 	& 0 & 2 & 15.64 & 4 & 26.04 & 6\\
+		 Radix Sort 	& 0 & 1700070 & 15.64 & 5100070 & 26.04 & 8500070\\
 		 \hline
-		 Flash Sort 	& 0 & 2 & 1.138 & 4 & 5 & 6\\
+		 Flash Sort 	& 0 & 899920 & 1.138 & 2682420 & 20.844 & 4488122\\
 		 \hline
 		\end{tabular}}
 		\caption{Sorting algorithms performance on random data with different range}
@@ -1139,27 +1181,27 @@ keepaspectratio]{Logo_hcmus.png}}%
 		 \hline
 		 Resulting Statics & Running Time & Comparison & Running Time & Comparison & Running Time & Comparison\\
 		 \hline
-		 Selection Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Selection Sort & 93.91 & 100009999 & 625.11 & 900029999 & 1312.42 & 2500049999\\
 		 \hline
-		 Insertion Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Insertion Sort & 0 & 152305 & 0 & 624889 & 0 & 640049\\
 		 \hline
-		 Bubble Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Bubble Sort 	& 78.81 & 89850280 & 644.81 & 893227005 & 1051.61 & 1752733757\\
 		 \hline
-		 Shaker Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shaker Sort 	& 0 & 259831 & 0 & 1019711 & 0 & 1299831\\
 		 \hline
-		 Shell Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shell Sort		& 0 & 404359 & 4.65 & 1310793 & 0 & 2274261\\
 		 \hline
-		 Heap Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Heap Sort		& 0 & 669952 & 1.186 & 2236478 & 0 & 3925397\\
 		 \hline
-		 Merge Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Merge Sort		& 0 & 510479 & 0 & 1663544 & 15.636 & 2818238\\
 		 \hline
-		 Quick Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Quick Sort		& 0 & 7088862 & 31.31 & 36562745 & 19.47 & 74151393\\
 		 \hline
-		 Counting Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Counting Sort 	& 0 & 90002 & 0 & 270002 & 0 & 450002\\
 		 \hline
-		 Radix Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Radix Sort 	& 0 & 140056 & 0 & 510070 & 0 & 850070\\
 		 \hline
-		 Flash Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Flash Sort 	& 0 & 127967 & 0 & 383961 & 0 & 639959\\
 		 \hline
 		\end{tabular}}
 		\caption{Sorting algorithms performance on nearly sorted data with different range}
@@ -1176,27 +1218,27 @@ keepaspectratio]{Logo_hcmus.png}}%
 		 \hline
 		 Resulting Statics & Running Time & Comparison & Running Time & Comparison & Running Time & Comparison\\
 		 \hline
-		 Selection Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Selection Sort & 5194.97 & 10000099999 & 46744.1 & 90000299999 & 129603 & 250000499999\\
 		 \hline
-		 Insertion Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Insertion Sort & 0 & 582221 & 0 & 1358349 & 0 & 1899041\\
 		 \hline
-		 Bubble Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Bubble Sort 	& 2755.05 & 4666526977 & 9881.06 & 17361186712 & 13787.1 & 24636224925\\
 		 \hline
-		 Shaker Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shaker Sort 	& 0 & 2599831 & 15.568 & 7799831 & 15.63 & 16999711\\
 		 \hline
-		 Shell Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shell Sort		& 0 & 2599831 & 15.56 & 15428016 & 15.687 & 25697900\\
 		 \hline
-		 Heap Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Heap Sort		& 15.686 & 8364891 & 46.94 & 27413346 & 78.125 & 47405168\\
 		 \hline
-		 Merge Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Merge Sort		& 31.307 & 5863673 & 46.875 & 18725017 & 78.176 & 32139970\\
 		 \hline
-		 Quick Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Quick Sort		& 31.26 & 40533048 & 46.887 & 44949745 & 78.135 & 132856411\\
 		 \hline
-		 Counting Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Counting Sort 	& 0 & 900002 & 0 & 2700002 & 15.562 & 4500002\\
 		 \hline
-		 Radix Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Radix Sort 	& 0 & 1700070 & 15.626 & 6000084 & 15.627 & 10000084\\
 		 \hline
-		 Flash Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Flash Sort 	& 0 & 1279961 & 0 & 3839957 & 15.625 & 6399959\\
 		 \hline
 		\end{tabular}}
 		\caption{Sorting algorithms performance on nearly sorted data with different range}
@@ -1213,27 +1255,27 @@ keepaspectratio]{Logo_hcmus.png}}%
 		 \hline
 		 Resulting Statics & Running Time & Comparison & Running Time & Comparison & Running Time & Comparison\\
 		 \hline
-		 Selection Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Selection Sort & 46.943 & 100009999 & 468.82 & 900029999 & 1298.98 & 2500049999\\
 		 \hline
-		 Insertion Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Insertion Sort & 0 & 29997 & 0 & 89997 & 0 & 149997\\
 		 \hline
-		 Bubble Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Bubble Sort 	& 0 & 20001 & 0 & 60001 & 0 & 100001\\
 		 \hline
-		 Shaker Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shaker Sort 	& 0 & 19999 & 0 & 59999 & 0 & 99999\\
 		 \hline
-		 Shell Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shell Sort		& 0 & 360042 & 0 & 1170050 & 0 & 2100049\\
 		 \hline
-		 Heap Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Heap Sort		& 0 & 670329 & 0 & 2236648 & 3.09 & 3925351\\
 		 \hline
-		 Merge Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Merge Sort		& 0 & 475242 & 0 & 1559914 & 0 & 2722826\\
 		 \hline
-		 Quick Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Quick Sort		& 0 & 262210 & 0 & 864713 & 0 & 1579403\\
 		 \hline
-		 Counting Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Counting Sort 	& 0 & 90002 & 0 & 270002 & 0 & 450002\\
 		 \hline
-		 Radix Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Radix Sort 	& 0 & 140056 & 0 & 510070 & 0 & 850070\\
 		 \hline
-		 Flash Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Flash Sort 	& 0 & 127989 & 0 & 383989 & 0 & 639989\\
 		 \hline
 		\end{tabular}}
 		\caption{Sorting algorithms performance on sorted data with different range}
@@ -1250,27 +1292,27 @@ keepaspectratio]{Logo_hcmus.png}}%
 		 \hline
 		 Resulting Statics & Running Time & Comparison & Running Time & Comparison & Running Time & Comparison\\
 		 \hline
-		 Selection Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Selection Sort & 5203.17 & 10000099999 & 46669.3 & 90000299999 & 129599 & 250000499999\\
 		 \hline
-		 Insertion Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Insertion Sort & 0 & 299997 & 0 & 899997 & 3.12 & 1499997\\
 		 \hline
-		 Bubble Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Bubble Sort 	& 0 & 200001 & 0 & 600001 & 0 & 1000001\\
 		 \hline
-		 Shaker Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shaker Sort 	& 0 & 199999 & 0 & 599999 & 0 & 999999\\
 		 \hline
-		 Shell Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shell Sort		& 0 & 4500051 & 3.91 & 15300061 & 21.92 & 25500058\\
 		 \hline
-		 Heap Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Heap Sort		& 15.63 & 8365080 & 46.81 & 27413230 & 93.69 & 47404886\\
 		 \hline
-		 Merge Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Merge Sort		& 15.678 & 5745658 & 46.805 & 18645946 & 78.186 & 32017850\\
 		 \hline
-		 Quick Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Quick Sort		& 0 & 3358781 & 15.62 & 10709676 & 18.76 & 18335041\\
 		 \hline
-		 Counting Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Counting Sort 	& 0 & 900002 & 0 & 2700002 & 0 & 4500002\\
 		 \hline
-		 Radix Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Radix Sort 	& 0 & 1700070 & 15.62 & 6000084 & 21.88 & 10000084\\
 		 \hline
-		 Flash Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Flash Sort 	& 0 & 1279989 & 0 & 3839989 & 6.25 & 6399989\\
 		 \hline
 		\end{tabular}}
 		\caption{Sorting algorithms performance on sorted data with different range}
@@ -1287,29 +1329,29 @@ keepaspectratio]{Logo_hcmus.png}}%
 		 \hline
 		 Resulting Statics & Running Time & Comparison & Running Time & Comparison & Running Time & Comparison\\
 		 \hline
-		 Selection Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Selection Sort & 46.886 & 100009999 & 484.461 & 900029999 & 1375.08 & 2500049999\\
 		 \hline
-		 Insertion Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Insertion Sort & 62.591 & 99990001 & 625.076 & 899970001 & 1734.43 & 2499950001\\
 		 \hline
-		 Bubble Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Bubble Sort 	& 144.894 & 100019998 & 1359.45 & 900059998 & 3799.63 & 2500099998\\
 		 \hline
-		 Shaker Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shaker Sort 	& 156.323 & 100000000 & 1421.97 & 900000000 & 3925.55 & 2500000000\\
 		 \hline
-		 Shell Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shell Sort		& 0 & 475175 & 0 & 1554051 & 15.639 & 2844628\\
 		 \hline
-		 Heap Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Heap Sort		& 0 & 606771 & 0 & 2063324 & 0 & 3612724\\
 		 \hline
-		 Merge Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Merge Sort		& 0 & 476441 & 0 & 1573465 & 0 & 2733945\\
 		 \hline
-		 Quick Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Quick Sort		& 0 & 493462 & 0 & 1716158 & 0 & 3055462\\
 		 \hline
-		 Counting Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Counting Sort 	& 0 & 90002 & 0 & 270002 & 0 & 450002\\
 		 \hline
-		 Radix Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Radix Sort 	& 0 & 140056 & 0 & 510070 & 0 & 850070\\
 		 \hline
-		 Flash Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Flash Sort 	& 0 & 110497 & 0 & 331497 & 0 & 552497\\
 		 \hline
-		\end{tabular}}
+			\end{tabular}}
 		\caption{Sorting algorithms performance on reversed sorted data with different range}
 		\end{table}
 		
@@ -1324,27 +1366,28 @@ keepaspectratio]{Logo_hcmus.png}}%
 		 \hline
 		 Resulting Statics & Running Time & Comparison & Running Time & Comparison & Running Time & Comparison\\
 		 \hline
-		 Selection Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Selection Sort & 5484.36 & 10000099999 & 49425.7 & 90000299999 & 136486 & 250000499999\\
 		 \hline
-		 Insertion Sort & 1 & 2 & 3 & 4 & 5 & 6\\
+		 Insertion Sort & 6910.98 & 9999900001 & 62061.5 & 89999700001 & 172443 & 249999500001\\
 		 \hline
-		 Bubble Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Bubble Sort 	& 14946.1 & 10000199998 & 134832 & 90000599998 & 374753 & 250000999998\\
 		 \hline
-		 Shaker Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shaker Sort 	& 15611.4 & 10000000000 & 140205 & 90000000000 & 389069 & 250000000000\\
 		 \hline
-		 Shell Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Shell Sort		& 15.699 & 6089190 & 15.637 & 20001852 & 15.687 & 33857581\\
 		 \hline
-		 Heap Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Heap Sort		& 15.63 & 7718943 & 46.876 & 25569379 & 94.106 & 44483348
+\\
 		 \hline
-		 Merge Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Merge Sort		& 15.687 & 5767897 & 46.946 & 18708313 & 78.203 & 32336409\\
 		 \hline
-		 Quick Sort		& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Quick Sort		& 15.64 & 6610278 & 15.626 & 22138566 & 46.877 & 38720326\\
 		 \hline
-		 Counting Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Counting Sort 	& 0 & 900002 & 0 & 2700002 & 0 & 4500002\\
 		 \hline
-		 Radix Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Radix Sort 	& 0 & 1700070 & 15.689 & 6000084 & 31.247 & 10000084\\
 		 \hline
-		 Flash Sort 	& 1 & 2 & 3 & 4 & 5 & 6\\
+		 Flash Sort 	& 0 & 1104997 & 0 & 3314997 & 15.559 & 5524997\\
 		 \hline
 		\end{tabular}}
 		\caption{Sorting algorithms performance on reversed sorted data with different range}
@@ -1353,81 +1396,81 @@ keepaspectratio]{Logo_hcmus.png}}%
 		%randomize input
 		\pgfplotstableread[row sep=\\,col sep=&]{
 		Algorithm 		& 10000 & 30000 & 50000 & 100000 & 300000 & 500000\\
-		Selection Sort 	& 100   & 2000  & 30000 & 40000 & 50000 & 100000\\
-		Insertion Sort 	& 2000  & 4000  & 30000 & 35000 & 40000 & 60000\\
-		Bubble Sort 	& 2000  & 4000  & 30000 & 35000 & 40000 & 60000\\
-		Shaker Sort 	& 2000  & 4000  & 30000 & 35000 & 40000 & 60000\\
-		Shell Sort 		& 2000  & 4000  & 30000 & 35000 & 40000 & 60000\\
+		Selection Sort 	& 100009999   & 900029999  & 2500049999 & 10000099999 & 90000299999 & 250000499999\\
+		Insertion Sort 	& 50006605  & 451666774  & 1243254048 & 5002318239 & 45057523254 & 124942170786\\
+		Bubble Sort 	& 100013601  & 900032112  & 2499890237 & 9999851901 & 90000000925 & 249998594400\\
+		Shaker Sort 	& 75159744  & 674219324  & 1877697084 & 7504597884 & 67769190000 & 187638922716\\
+		Shell Sort 		& 669002  & 2309068  & 4321196 & 9593239 & 35470454 & 62277259\\
 		}\randomizeDataInput
 	
 		\pgfplotstableread[row sep=\\,col sep=&]{
 		Algorithm 		& 10000 & 30000 & 50000 & 100000 & 300000 & 500000\\
-		Heap Sort		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Merge Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Quick Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Counting Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Radix Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Flash Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
+		Heap Sort		& 638091 & 2150165 & 3772496 & 8043541 & 26490788 & 62277259\\
+		Merge Sort 		& 583584 & 1937397 & 3383386 & 7166083 & 23381911 & 40382117\\
+		Quick Sort 		& 318194 & 1037720 & 1937121 & 4113382 & 14782439 & 27599949\\
+		Counting Sort 	& 90000 & 270000 & 415538 & 765538 & 2165538 & 3565538\\
+		Radix Sort 		& 140056 & 510070 & 850070 & 1700070 & 5100070 & 8500070\\
+		Flash Sort 		& 97678 & 300135 & 479812 & 899920 & 2682420 & 4488122\\
 		}\randomizeDataInputt
 	
 		%Nearly Sorted input
 		\pgfplotstableread[row sep=\\,col sep=&]{
 		Algorithm 		& 10000 & 30000 & 50000 & 100000 & 300000 & 500000\\
-		Selection Sort 	& 100 & 2000 & 30000 & 40000 & 50000 & 100000\\
-		Insertion Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Bubble Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Shaker Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Shell Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
+		Selection Sort 	& 100009999 & 900029999 & 2500049999 & 10000099999 & 90000299999 & 250000499999\\
+		Insertion Sort 	& 152305 & 624889 & 640049 & 582221 & 1358349 & 1899041\\
+		Bubble Sort 	& 89850280 & 893227005 & 1752733757 & 4666526977 & 17361186712 & 24636224925\\
+		Shaker Sort 	& 259831 & 1019711 & 1299831 & 2599831 & 7799831 & 16999711\\
+		Shell Sort 		& 404359 & 1310793 & 2274261 & 4710349 & 15428016 & 25697900\\
 		}\nearlySortedInput
 	
 		\pgfplotstableread[row sep=\\,col sep=&]{
 			Algorithm 		& 10000 & 30000 & 50000 & 100000 & 300000 & 500000\\
-			Heap Sort		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Merge Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Quick Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Counting Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Radix Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Flash Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
+			Heap Sort		& 669952 & 2236478 & 3925397 & 8364891 & 27413346 & 47405168\\
+			Merge Sort 		& 510479 & 1663544 & 2818238 & 5863673 & 18725017 & 32139970\\
+			Quick Sort 		& 7088862 & 36562745 & 74151393 & 40533048 & 44949745 & 132856411\\
+			Counting Sort 	& 90002 & 270002 & 450002 & 900002 & 2700002 & 4500002\\
+			Radix Sort 		& 140056 & 510070 & 850070 & 1700070 & 6000084 & 10000084\\
+			Flash Sort 		& 127967 & 383961 & 639959 & 1279961 & 3839957 & 6399959\\
 		}\nearlySortedInputt
 		
 		%Sorted input
 		\pgfplotstableread[row sep=\\,col sep=&]{
 		Algorithm 		& 10000 & 30000 & 50000 & 100000 & 300000 & 500000\\
-		Selection Sort 	& 100 & 2000 & 30000 & 40000 & 50000 & 100000\\
-		Insertion Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Bubble Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Shaker Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Shell Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
+		Selection Sort 	& 100009999 & 900029999 & 2500049999 & 10000099999 & 90000299999 & 250000499999\\
+		Insertion Sort 	& 29997 & 89997 & 149997 & 299997 & 899997 & 1499997\\
+		Bubble Sort 	& 20001 & 60001 & 100001 & 200001 & 600001 & 1000001\\
+		Shaker Sort 	& 19999 & 59999 & 99999 & 199999 & 599999 & 999999\\
+		Shell Sort 		& 360042 & 1170050 & 2100049 & 4500051 & 15300061 & 25500058\\
 		}\sortedInput
 	
 		\pgfplotstableread[row sep=\\,col sep=&]{
 			Algorithm 		& 10000 & 30000 & 50000 & 100000 & 300000 & 500000\\
-			Heap Sort		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Merge Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Quick Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Counting Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Radix Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Flash Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
+			Heap Sort		& 670329 & 2236648 & 3925351 & 8365080 & 27413230 & 47404886\\
+			Merge Sort 		& 475242 & 1559914 & 2722826 & 5745658 & 18645946 & 32017850\\
+			Quick Sort 		& 262210 & 864713 & 1579403 & 3358781 & 10709676 & 18335041\\
+			Counting Sort 	& 90002 & 270002 & 450002 & 900002 & 2700002 & 4500002\\
+			Radix Sort 		& 140056 & 510070 & 850070 & 1700070 & 6000084 & 10000084\\
+			Flash Sort 		& 127989 & 383989 & 639989 & 1279989 & 3839989 & 6399989\\
 		}\sortedInputt
 		
 		%Reversed Sorted input
 		\pgfplotstableread[row sep=\\,col sep=&]{
 		Algorithm 		& 10000 & 30000 & 50000 & 100000 & 300000 & 500000\\
-		Selection Sort 	& 100 & 2000 & 30000 & 40000 & 50000 & 100000\\
-		Insertion Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Bubble Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Shaker Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-		Shell Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
+		Selection Sort 	& 100009999 & 900029999 & 2500049999 & 10000099999 & 90000299999 & 250000499999\\
+		Insertion Sort 	& 99990001 & 899970001 & 2499950001 & 9999900001 & 89999700001 & 249999500001\\
+		Bubble Sort 	& 100019998 & 900059998 & 2500099998 & 10000199998 & 90000599998 & 250000999998\\
+		Shaker Sort 	& 100000000 & 900000000 & 2500000000 & 10000000000 & 90000000000 & 250000000000\\
+		Shell Sort 		& 475175 & 1554051 & 2844628 & 6089190 & 20001852 & 33857581\\
 		}\reversedSortedInput
 	
 		\pgfplotstableread[row sep=\\,col sep=&]{
 			Algorithm 		& 10000 & 30000 & 50000 & 100000 & 300000 & 500000\\
-			Heap Sort		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Merge Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Quick Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Counting Sort 	& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Radix Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
-			Flash Sort 		& 2000 & 4000 & 30000 & 35000 & 40000 & 60000\\
+			Heap Sort		& 606771 & 2063324 & 3612724 & 7718943 & 25569379 & 44483348\\
+			Merge Sort 		& 476441 & 1573465 & 2733945 & 5767897 & 18708313 & 32336409\\
+			Quick Sort 		& 493462 & 1716158 & 3055462 & 6610278 & 22138566 & 38720326\\
+			Counting Sort 	& 90002 & 270002 & 450002 & 900002 & 2700002 & 4500002\\
+			Radix Sort 		& 140056 & 510070 & 850070 & 1700070 & 6000084 & 10000084\\
+			Flash Sort 		& 110497 & 331497 & 552497 & 1104997 & 3314997 & 5524997\\
 		}\reversedSortedInputt
 		
 	\pagebreak
@@ -1833,11 +1876,11 @@ keepaspectratio]{Logo_hcmus.png}}%
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
 		10000  & 0			\\
-		30000  & 15.542 	\\
-		50000  & 23.745		\\
-		100000 & 326.41		\\
-		300000 & 2227.45	\\
-		500000 & 4055.12 	\\
+		30000  & 0         	\\
+		50000  & 15.635		\\
+		100000 & 31.25		\\
+		300000 & 62.568 	\\
+		500000 & 109.371 	\\
 	}\randMergeSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -1883,82 +1926,82 @@ keepaspectratio]{Logo_hcmus.png}}%
 	%Nearly Sorted data
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 46.92 		\\
-		30000  & 471.53 	\\
-		50000  & 1306.26 	\\
-		100000 & 5192.86	\\
-		300000 & 46669.30	\\
-		500000 & 129784 	\\
+		10000  & 93.91 		\\
+		30000  & 625.11 	\\
+		50000  & 1312.42 	\\
+		100000 & 5194.97	\\
+		300000 & 46744.1	\\
+		500000 & 129603 	\\
 	}\nsortedSelectionSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 31.27		\\
-		30000  & 315.54 	\\
-		50000  & 863.56 	\\
-		100000 & 3452.75	\\
-		300000 & 31116.50	\\
-		500000 & 86930.3 	\\
+		10000  & 0		    \\
+		30000  & 0 	        \\
+		50000  & 0 	        \\
+		100000 & 0	        \\
+		300000 & 0	        \\
+		500000 & 0 	        \\
 	}\nsortedInsertionSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 125.08		\\
-		30000  & 1657.53 	\\
-		50000  & 4815.73 	\\
-		100000 & 19917.10	\\
-		300000 & 187245		\\
-		500000 & 530384 	\\
+		10000  & 78.81		\\
+		30000  & 644.81 	\\
+		50000  & 1051.61 	\\
+		100000 & 2755.05	\\
+		300000 & 9881.06	\\
+		500000 & 13787.1 	\\
 	}\nsortedBubbleSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 128.65		\\
-		30000  & 1304.97 	\\
-		50000  & 3671.22 	\\
-		100000 & 14860.63	\\
-		300000 & 135069		\\
-		500000 & 369850 	\\
+		10000  & 0		    \\
+		30000  & 0 	        \\
+		50000  & 0 	        \\
+		100000 & 0	        \\
+		300000 & 15.568		\\
+		500000 & 15.63   	\\
 	}\nsortedShakerSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
 		10000  & 0			\\
-		30000  & 6.25 		\\
-		50000  & 15.80 		\\
-		100000 & 21.88		\\
-		300000 & 65.56		\\
-		500000 & 111.20 	\\
+		30000  & 4.65 		\\
+		50000  & 0 		    \\
+		100000 & 0		    \\
+		300000 & 15.56		\\
+		500000 & 15.687 	\\
 	}\nsortedShellSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
 		10000  & 0			\\
-		30000  & 6.16 		\\
-		50000  & 12.59 		\\
-		100000 & 18.816		\\
-		300000 & 65.42		\\
-		500000 & 120.78 	\\
+		30000  & 1.186 		\\
+		50000  & 0 		    \\
+		100000 & 15.686		\\
+		300000 & 46.94		\\
+		500000 & 78.125 	\\
 	}\nsortedHeapSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 0			\\
-		30000  & 15.542 	\\
-		50000  & 23.745		\\
-		100000 & 326.41		\\
-		300000 & 2227.45	\\
-		500000 & 4055.12 	\\
+		10000  & 0  		\\
+		30000  & 0      	\\
+		50000  & 15.636		\\
+		100000 & 31.307 	\\
+		300000 & 46.875 	\\
+		500000 & 78.176 	\\
 	}\nsortedMergeSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
 		10000  & 0			\\
-		30000  & 0 			\\
-		50000  & 0			\\
-		100000 & 9.39		\\
-		300000 & 25.05		\\
-		500000 & 51.39 		\\
+		30000  & 31.31 		\\
+		50000  & 19.47		\\
+		100000 & 31.26		\\
+		300000 & 46.887		\\
+		500000 & 78.135 	\\
 	}\nsortedQuickSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -1968,7 +2011,7 @@ keepaspectratio]{Logo_hcmus.png}}%
 		50000  & 0			\\
 		100000 & 0			\\
 		300000 & 0			\\
-		500000 & 3.11 		\\
+		500000 & 15.562 	\\
 	}\nsortedCountingSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -1977,8 +2020,8 @@ keepaspectratio]{Logo_hcmus.png}}%
 		30000  & 0 			\\
 		50000  & 0			\\
 		100000 & 0			\\
-		300000 & 15.64		\\
-		500000 & 26.04 		\\
+		300000 & 15.626		\\
+		500000 & 15.627 	\\
 	}\nsortedRadixSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -1987,8 +2030,8 @@ keepaspectratio]{Logo_hcmus.png}}%
 		30000  & 0 			\\
 		50000  & 0			\\
 		100000 & 0			\\
-		300000 & 1.138		\\
-		500000 & 20.844		\\
+		300000 & 0  		\\
+		500000 & 15.625 	\\
 	}\nsortedFlashSort
 	
 	%Sorted data
@@ -2055,11 +2098,11 @@ keepaspectratio]{Logo_hcmus.png}}%
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
 		10000  & 0			\\
-		30000  & 15.542 	\\
-		50000  & 23.745		\\
-		100000 & 326.41		\\
-		300000 & 2227.45	\\
-		500000 & 4055.12 	\\
+		30000  & 0      	\\
+		50000  & 0   		\\
+		100000 & 15.678		\\
+		300000 & 46.805 	\\
+		500000 & 78.186 	\\
 	}\sortedMergeSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -2106,72 +2149,72 @@ keepaspectratio]{Logo_hcmus.png}}%
 	%Reverse Sorted data
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 46.92 		\\
-		30000  & 471.53 	\\
-		50000  & 1306.26 	\\
-		100000 & 5192.86	\\
-		300000 & 46669.30	\\
-		500000 & 129784 	\\
+		10000  & 46.886		\\
+		30000  & 484.461 	\\
+		50000  & 1375.08 	\\
+		100000 & 5484.36	\\
+		300000 & 49425.7	\\
+		500000 & 136486 	\\
 	}\revSelectionSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 31.27		\\
-		30000  & 315.54 	\\
-		50000  & 863.56 	\\
-		100000 & 3452.75	\\
-		300000 & 31116.50	\\
-		500000 & 86930.3 	\\
+		10000  & 62.591		\\
+		30000  & 625.076 	\\
+		50000  & 1734.43 	\\
+		100000 & 6910.98	\\
+		300000 & 62031.5	\\
+		500000 & 172443 	\\
 	}\revInsertionSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 125.08		\\
-		30000  & 1657.53 	\\
-		50000  & 4815.73 	\\
-		100000 & 19917.10	\\
-		300000 & 187245		\\
-		500000 & 530384 	\\
+		10000  & 144.894	\\
+		30000  & 1359.45 	\\
+		50000  & 3799.63 	\\
+		100000 & 14946.1	\\
+		300000 & 134832		\\
+		500000 & 374753 	\\
 	}\revBubbleSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
-		10000  & 128.65		\\
-		30000  & 1304.97 	\\
-		50000  & 3671.22 	\\
-		100000 & 14860.63	\\
-		300000 & 135069		\\
-		500000 & 369850 	\\
+		10000  & 156.323	\\
+		30000  & 1421.97 	\\
+		50000  & 3925.55 	\\
+		100000 & 15611.4	\\
+		300000 & 140205		\\
+		500000 & 389069 	\\
 	}\revShakerSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
 		10000  & 0			\\
-		30000  & 6.25 		\\
-		50000  & 15.80 		\\
-		100000 & 21.88		\\
-		300000 & 65.56		\\
-		500000 & 111.20 	\\
+		30000  & 0   		\\
+		50000  & 15.639 	\\
+		100000 & 15.699		\\
+		300000 & 15.637		\\
+		500000 & 15.687 	\\
 	}\revShellSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
 		10000  & 0			\\
-		30000  & 6.16 		\\
-		50000  & 12.59 		\\
-		100000 & 18.816		\\
-		300000 & 65.42		\\
-		500000 & 120.78 	\\
+		30000  & 0   		\\
+		50000  & 0   		\\
+		100000 & 15.63		\\
+		300000 & 46.876		\\
+		500000 & 94.106 	\\
 	}\revHeapSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
 		Range  & Runtime 	\\
 		10000  & 0			\\
-		30000  & 15.542 	\\
-		50000  & 23.745		\\
-		100000 & 326.41		\\
-		300000 & 2227.45	\\
-		500000 & 4055.12 	\\
+		30000  & 0      	\\
+		50000  & 0   		\\
+		100000 & 15.687	    \\
+		300000 & 46.946  	\\
+		500000 & 78.203  	\\
 	}\revMergeSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -2179,9 +2222,9 @@ keepaspectratio]{Logo_hcmus.png}}%
 		10000  & 0			\\
 		30000  & 0 			\\
 		50000  & 0			\\
-		100000 & 9.39		\\
-		300000 & 25.05		\\
-		500000 & 51.39 		\\
+		100000 & 15.64		\\
+		300000 & 15.626		\\
+		500000 & 46.877		\\
 	}\revQuickSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -2191,7 +2234,7 @@ keepaspectratio]{Logo_hcmus.png}}%
 		50000  & 0			\\
 		100000 & 0			\\
 		300000 & 0			\\
-		500000 & 3.11 		\\
+		500000 & 0   		\\
 	}\revCountingSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -2200,8 +2243,8 @@ keepaspectratio]{Logo_hcmus.png}}%
 		30000  & 0 			\\
 		50000  & 0			\\
 		100000 & 0			\\
-		300000 & 15.64		\\
-		500000 & 26.04 		\\
+		300000 & 15.689		\\
+		500000 & 31.247		\\
 	}\revRadixSort
 	
 	\pgfplotstableread[row sep=\\,col sep=&]{
@@ -2210,8 +2253,8 @@ keepaspectratio]{Logo_hcmus.png}}%
 		30000  & 0 			\\
 		50000  & 0			\\
 		100000 & 0			\\
-		300000 & 1.138		\\
-		500000 & 20.844		\\
+		300000 & 0  		\\
+		500000 & 15.559		\\
 	}\revFlashSort
 	
 	\begin{figure}[H]
@@ -2373,10 +2416,98 @@ keepaspectratio]{Logo_hcmus.png}}%
 	\end{tikzpicture}
 	\caption{Sorting algorithm's runtime statistics on different range of data}
 	\end{figure}
+	\flushleft{
+	\subsection{Summary}
+	    \begin{enumerate}
+	        \item \textbf{Runtime}
+	            \begin{itemize}
+	                \item Randomized 
+	                \begin{itemize}
+	                    \item Counting Sort is the best option with big data size, it takes approximately 0 milisecond at size 500,000
+	                    \item Bubble Sort is the worst option, it takes up to 530384 ms to sort an array at size 500,000
+	                \end{itemize}
+	                \item Nearly Sorted
+	                \begin{itemize}
+	                    \item Insertion Sort is the best option with big data size, it takes approximately 0 milisecond at size 500,000
+	                    \item Selection Sort is the worst option, it takes up to 129603 ms to sort an array at size 500,000
+	                \end{itemize}
+	                \item Sorted
+	                \begin{itemize}
+	                    \item Bubble Sort, Shaker Sort and Counting Sort are the best option with big data size, they take approximately 0 milisecond at size 500,000
+	                    \item Selection Sort is the worst option, it takes up to 129599 ms to sort an array at size 500,000
+	                \end{itemize}
+	                \item Reversed Sorted
+	                \begin{itemize}
+	                    \item Counting Sort is the best option with big data size, it takes approximately 0 milisecond at size 500,000
+	                    \item Bubble Sort and Shaker Sort are the worst option, they take about 380000 ms to sort an array at size 500,000
+	                \end{itemize}
+	            \end{itemize}
+	        \item \textbf{Comparisons}
+	            \begin{itemize}
+	                \item Randomized 
+	                \begin{itemize}
+	                    \item Counting Sort is the best option with lowest comparisons, it only compares 3,565,538 times to make an array at size 500,000 sorted
+	                    \item Selection Sort and Bubble Sort are the worst option, they have to compare about 250,000,000,000 times to sort an array at size 500,000
+	                \end{itemize}
+	                \item Nearly Sorted
+	                \begin{itemize}
+	                    \item Insertion Sort is the best option with lowest comparisons, it only compares 1,899,041 times to make an array at size 500,000 sorted
+	                    \item Selection Sort is the worst option, it has to compare about 250,000,000,000 times to sort an array at size 500,000
+	                \end{itemize}
+	                \item Sorted
+	                \begin{itemize}
+	                    \item Bubble Sort and Shaker Sort are the best option with lowest comparisons, it only compares about 1,000,000 times to make an array at size 500,000 sorted
+	                    \item Selection Sort is the worst option, it has to compare about 250,000,000,000 times to sort an array at size 500,000
+	                \end{itemize}
+	                \item Reversed Sorted
+	                \begin{itemize}
+	                    \item Counting Sort is the best option with lowest comparisons, it only compares about 4,500,002 times to make an array at size 500,000 sorted
+	                    \item Selection Sort, Insertion Sort, Bubble Sort, Shaker Sort are the worst option, it have to compare about 250,000,000,000 times to sort an array at size 500,000
+	                \end{itemize}
+	            \end{itemize}
+	    \end{enumerate}
+	
+	}
+	
 	\pagebreak
 	\flushleft{
 	\section{Project organization and Programming notes}
-	
+	\begin{enumerate}
+	    \item \textbf{File}
+	        \begin{itemize}
+	            \item \textbf{main.cpp}
+	            
+	                This file contains all the functions for user to see the runtime and comparisons from a sorting algorithm or user want to compare 2 algorithm simultaneously. When user input command from terminal, this file will call sorting function from Sorting Algorithm.h to sort the input which generated from DataGenerator.h and then print the runtime or comparisons on terminal.
+	            \item \textbf{DataGenerator.h}
+	                
+	                This file generates input in specific order(random, nearly sorted, sorted, reversed sorted) with specific range(10000, 30000, 50000, 100000, 300000, 500000).
+	            \item \textbf{SortingAlgorithm.h}
+	            
+	                This file includes all the name of sorting functions(Merge sort, Quick Sort, Heap Sort,...).
+	           \item \textbf{Sorting.cpp}
+	           
+	                Include detail the implementation of each sorting functions
+	        \end{itemize}
+	    \item \textbf{Function}
+	        \begin{itemize}
+	            \item \textbf{double time-bubble-sort(int a[], int n)}: get runtime of bubble sort.
+	            \item \textbf{long long comp-bubble-sort(int a[], int n)}: return number of comparisons of Bubble Sort.
+	            \item \textbf{void algorithmMode(vector<string> argv)}: go to algorithm mode.
+	            \item\textbf{void compareMode(vector<string> argv)}: go to compare mode.
+	            \item\textbf{void command1(vector<string> argv)}: Run a sorting algorithm on the given input data
+	            \item\textbf{void command2(vector<string> argv)}: Run a sorting algorithm on the data generated automatically with specified
+size and order
+                \item\textbf{void command3(vector<string> argv)}: Run a sorting algorithm on ALL data arrangements of a specified size.
+                \item\textbf{void command4(vector<string> argv)}: Run two sorting algorithms on the given input.
+                \item\textbf{void command5(vector<string> argv)}: Run two sorting algorithms on the data generated automatically
+	        \end{itemize}
+	    \item \textbf{Library}
+	    
+	        \textbf{std::chrono library}
+	        
+	            Used for getting the runtime of a sorting function in milisecond.
+	            
+	\end{enumerate}
 	\addcontentsline{toc}{section}{References}
 	}
 	\begin{thebibliography}{}
@@ -2397,7 +2528,7 @@ keepaspectratio]{Logo_hcmus.png}}%
 		\bibitem{} \href{https://en.wikipedia.org/wiki/Cocktail_shaker_sort}{Cocktail/ Shaker Sort}
 		\bibitem{} \href{https://www.tutorialspoint.com/data_structures_algorithms/shell_sort_algorithm.htm}{Shell Sort Pseudocode}
 		\bibitem{} \href{https://en.wikipedia.org/wiki/Shellsort}{Shell Sort Idea}
-		\bibitem{} \href{https://www.geeksforgeeks.org/shellsort/}{Shell Sort Source Code}
+		\bibitem{} \href{https://www.geeksforgeeks.org/shellsort/}{Shell Sort Source Code, Idea, Variant}
 		\bibitem{} \href{https://www.tutorialspoint.com/Heap-Sort}{Main Idea Heap Sort}
 		\bibitem{} \href{https://www.liquisearch.com/heapsort/variations}{Heap Sort Variants}
 		\bibitem{} \href{https://www.quora.com/What-are-the-benefits-of-heap-sort-and-its-disadvantages-compared-to-other-sorting-algorithms}{Advantage and Disadvantage of Heap Sort}
@@ -2411,13 +2542,14 @@ keepaspectratio]{Logo_hcmus.png}}%
 		\bibitem{} \href{https://www.geeksforgeeks.org/quick-sort/}{Quick Sort Source Code}
 		\bibitem{} \href{https://www.mygreatlearning.com/blog/quick-sort-algorithm/}{Quick Sort Pseudocode}
 		\bibitem{} \href{https://www.geeksforgeeks.org/counting-sort/}{Counting Sort Idea}
-		\bibitem{} \href{https://www.simplilearn.com/tutorials/data-structure-tutorial/counting-sort-algori	thm#:~:text=Applications%20of%20Counting%20Sort%20Algorithm&text=It%20has%20an%20O(n,using%20partial%20hashing%20(1).}{Applicatoins, Complexity Analysis of Counting Sort}
+		\bibitem{} \href{https://www.simplilearn.com/tutorials/data-structure-tutorial/counting-sort-algori	thm#:~:text=Applications%20of%20Counting%20Sort%20Algorithm&text=It%20has%20an%20O(n,using%20partial%20hashing%20(1).}{Applications, Complexity Analysis of Counting Sort}
 		\bibitem{} \href{https://www.interviewkickstart.com/learn/counting-sort}{Advantage/ Disadvantage of Counting Sort}
 		\bibitem{} \href{https://www.codingeek.com/algorithms/counting-sort-explanation-pseudocode-and-implementation/}{Counting Sort Pseudocode}
 		\bibitem{} \href{https://www.interviewkickstart.com/learn/radix-sort-algorithm}{Radix Sort Knowledge}
 		\bibitem{} \href{https://www.codingeek.com/algorithms/radix-sort-explanation-pseudocode-and-implementation/?fbclid=IwAR3V50-QQ7TA6GD12IaD3rufYsRg8dPANlSZTGfrHvZZvQ6Td2ILvW7pST4#5_pseudocode_of_radix_sort}{Radix Sort Pseudocode}
 		\bibitem{} \href{https://www.simplilearn.com/tutorials/data-structure-tutorial/radix-sort}{Radix Sort Complexity Analysis}
 		\bibitem{} \href{https://en.wikipedia.org/wiki/Flashsort}{Flash Sort Idea}
+		\bibitem{} \href{https://www.youtube.com/watch?v=b7zilz_agxk&t=141s}{Latex Template}
 	\end{thebibliography}
 }		
 
